@@ -69,7 +69,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center pt-[2rem] text-[1.2rem] bg-gradient-to-br from-indigo-300 to-pink-300">
-      <h1 className="text-[1.9rem] lg:text-[2.5rem] font-extrabold my-[2rem]">Sorting Project</h1>
+      <h1 className="text-[1.9rem] lg:text-[2.5rem] font-extrabold my-[2rem] mt-[4rem]">Sorting Project</h1>
       <textarea
         className="min-h-[3rem] my-[1rem] w-[80vw] border p-[0.5rem] border-gray-400 rounded-md"
         placeholder="Enter numbers separated by commas. &#10;&#10; E.g.: 1,2,3,4,5,..."
@@ -112,9 +112,14 @@ export default function Home() {
           </div>
           <div className="text-[1.15rem] lg:text-[1.3rem] font-extrabold text-amber-950 my-[1rem]">
             Time Taken: {timeTaken} seconds
-          </div>          
+          </div>
         </div>
       )}
+      <div className="flex flex-col bg-amber-100 justify-center items-center lg:p-[0.6rem] absolute top-0 right-0">
+        <p>Sushil Bajpai</p>
+        <p>09511503121</p>
+        <p>DAA Project</p>
+      </div>
     </main>
   );
 }
