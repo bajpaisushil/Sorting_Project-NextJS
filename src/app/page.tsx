@@ -118,9 +118,7 @@ export default function Home() {
         </div>
       )}
       <div className="flex flex-col bg-amber-100 justify-center items-center lg:p-[0.6rem] absolute top-0 right-0">
-        <p>Sushil Bajpai</p>
-        <p>09511503121</p>
-        <p>DAA Project</p>
+        <p className="font-extrabold">Project : Design and Analysis of Algorithms</p>
       </div>
     </main>
   );
