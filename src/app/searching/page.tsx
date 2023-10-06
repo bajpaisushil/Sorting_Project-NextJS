@@ -26,6 +26,7 @@ export default function Home() {
         setFoundAt(linearSearch(numbersArray, toSearch));
         break;
       case "binary":
+        alert('Make sure that the array is sorted before using binary search!');
         setFoundAt(binarySearch(numbersArray, toSearch));
         break;
       default:

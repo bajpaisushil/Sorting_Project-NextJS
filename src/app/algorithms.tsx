@@ -19,7 +19,8 @@ export function binarySearch(arr: number[], target: number): number {
 
   while (left <= right) {
     const mid = Math.floor((left + right) / 2);
-
+    console.log(arr[mid], target, '>');
+    
     if (arr[mid] === target) {
       console.log('found at', mid);
       return mid; // Return the index of the target element if found
