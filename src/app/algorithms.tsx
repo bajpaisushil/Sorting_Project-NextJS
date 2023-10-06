@@ -1,3 +1,44 @@
+// SEARCHING ALGORITHMS //
+
+export function linearSearch(arr: number[], target: number): number {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i], target);
+    
+    if (arr[i] === target) {
+      console.log('found at', i);
+      return i; // Return the index of the target element if found
+    }
+  }
+  return -1;
+}
+
+
+export function binarySearch(arr: number[], target: number): number {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+
+    if (arr[mid] === target) {
+      console.log('found at', mid);
+      return mid; // Return the index of the target element if found
+    } else if (arr[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+
+  return -1;
+}
+
+
+
+
+
+// SORTING ALGORITHMS //
+
 export function bubbleSort<T>(array: T[]): T[] {
   for (let i = 0; i < array.length - 1; i++) {
     for (let j = 0; j < array.length - i - 1; j++) {
@@ -23,55 +64,9 @@ export function insertionSort<T>(array: T[]): T[] {
     }
     array[j + 1] = current;
   }
-
   return array;
 }
 
-// Heap sort.
-// export function heapSort<T>(array: T[]): T[] {
-//   // Build a max heap.
-//   for (let i = Math.floor(array.length / 2) - 1; i >= 0; i--) {
-//     heapify(array, i);
-//   }
-
-//   // Sort the heap.
-//   for (let i = array.length - 1; i > 0; i--) {
-//     // Swap the first and last elements of the heap.
-//     const temp = array[0];
-//     array[0] = array[i];
-//     array[i] = temp;
-
-//     // Heapify the remaining heap.
-//     heapify(array, 0);
-//   }
-
-//   return array;
-// }
-
-// function heapify<T>(array: T[], i: number): void {
-//   const left = 2 * i + 1;
-//   const right = 2 * i + 2;
-
-//   let largest = i;
-//   if (left < array.length && array[left] > array[largest]) {
-//     largest = left;
-//   }
-//   if (right < array.length && array[right] > array[largest]) {
-//     largest = right;
-//   }
-
-//   if (largest !== i) {
-//     // Swap the largest element with the current element.
-//     const temp = array[largest];
-//     array[largest] = array[i];
-//     array[i] = temp;
-
-//     // Heapify the remaining heap.
-//     heapify(array, largest);
-//   }
-// }
-
-// Heapify a subtree rooted at index i.
 function heapify<T>(array: T[], n: number, i: number): void {
   let largest = i;
   const left = 2 * i + 1;
