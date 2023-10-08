@@ -90,7 +90,7 @@ export default function Sorting() {
         value={sortingAlgorithm}
         id="algorithm"
         onChange={(e) => setSortingAlgorithm(e.target.value)}
-        className="my-[1rem] p-[4px] rounded-md"
+        className="my-[1rem] p-[4px] rounded-md font-bold"
       >
         <option value="bubble">Bubble Sort</option>
         <option value="insertion">Insertion Sort</option>
