@@ -8,6 +8,8 @@ import {
   mergeSort,
   insertionSort,
   heapSort,
+  countingSort,
+  radixSort,
 } from "../algorithms";
 import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
@@ -43,6 +45,12 @@ export default function Sorting() {
         break;
       case "selection":
         setSortedNumbers(selectionSort(numbersArray));
+        break;
+      case "counting":
+        setSortedNumbers(countingSort(numbersArray));
+        break;
+      case "radix":
+        setSortedNumbers(radixSort(numbersArray));
         break;
       default:
         break;
@@ -90,6 +98,8 @@ export default function Sorting() {
         <option value="merge">Merge Sort</option>
         <option value="quick">Quick Sort</option>
         <option value="selection">Selection Sort</option>
+        <option value="counting">Counting Sort</option>
+        <option value="radix">Radix Sort</option>
       </select>
       <button
         onClick={handleSort}

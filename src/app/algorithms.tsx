@@ -206,3 +206,46 @@ export function selectionSort<T>(array: T[]): T[] {
   }
   return array;
 }
+
+//Counting sort.
+export function countingSort(array: number[]): number[] {
+  const max = Math.max(...array);
+  const min = Math.min(...array);
+  const countArray = new Array(max - min + 1).fill(0);
+
+  for (let i = 0; i < array.length; i++) {
+    countArray[array[i] - min]++;
+  }
+
+  let sortedIndex = 0;
+  for (let i = 0; i < countArray.length; i++) {
+    while (countArray[i] > 0) {
+      array[sortedIndex] = i + min;
+      sortedIndex++;
+      countArray[i]--;
+    }
+  }
+
+  return array;
+}
+
+
+//Radix sort.
+export function radixSort(array: number[]): number[] {
+  const max = Math.max(...array);
+  const maxDigits = Math.floor(Math.log10(max)) + 1;
+
+  for (let digitPlace = 0; digitPlace < maxDigits; digitPlace++) {
+    const buckets: number[][] = Array.from({ length: 10 }, () => []);
+
+    for (let i = 0; i < array.length; i++) {
+      const digit = Math.floor(array[i] / Math.pow(10, digitPlace)) % 10;
+      buckets[digit].push(array[i]);
+    }
+
+    array = buckets.flat();
+  }
+
+  return array;
+}
+
